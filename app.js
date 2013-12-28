@@ -30,7 +30,7 @@ if (cluster.isMaster) {
         if(handleError(err)) return;
         done();
         res.writeHead(200, {'content-type': 'application/json'});
-        res.end(JSON.stringify(result.rows));
+        res.end(JSON.stringify({'lodgings': result.rows}));
       });
     });
   }).listen(3002);
